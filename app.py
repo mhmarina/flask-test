@@ -37,8 +37,6 @@ def renderhtml():
 
 # what if I want to render variables?
 # placeholder <name>
-# any path that is not defined will go here...
-# this is an empty route.
 @app.route('/<name>')
 def name(name):
    # pass the given name to the {{name}} variable in html.
@@ -46,7 +44,7 @@ def name(name):
    # into html for example.
    return render_template('name.html', name=name)
    
-# if given no path
+# if given no path, call this function
 # prevent 404 msgs
 @app.route('/')
 def myredir():
@@ -77,7 +75,7 @@ if __name__ == "__main__":
   app.run(debug=True) 
 
 # Debugger is great, detects changes in the code
-# as the server runs..
+# as the server runs
 
 # 1st way to run file:
 # set FLASK_APP=app.py
